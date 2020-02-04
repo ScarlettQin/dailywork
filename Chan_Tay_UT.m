@@ -4,14 +4,14 @@ function [x_Chan_Tay,x_Chan_Tay_var] = Chan_Tay_UT(r_i1,M,x,cov_R,sigma)
 % x 基站位置
 % cov_R 噪声方差
 
-%% 最小二乘计算目标位置
+%% 这是编辑的位置
 for i = 1:M-1
     G1(i,:) = -[(x(:,i+1)-x(:,1))' r_i1(i)];
     h1(i,:) = 0.5*(r_i1(i)^2-x(:,i+1)'*x(:,i+1)+x(:,1)'*x(:,1))+0.5*sigma^2;
 end
 
 %%  第一步计算
-x_chan1 = inv(G1'*inv(cov_R)*G1)*G1'*inv(cov_R)*h1;
+x_
 
 for k = 1:3
     for i = 1:M
